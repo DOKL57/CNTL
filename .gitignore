@@ -1,0 +1,41 @@
+# IntelliJ IDEA (и другие JetBrains IDE)
+.idea/
+
+# Elixir/Erlang build artifacts
+/_build/
+deps/
+erl_crash.dump
+
+# Elixir release artifacts
+/rel/
+
+# Mix lock and config for other users
+*.ez
+
+# Editor swap/backup files
+*~
+*.swp
+*.swo
+*.bak
+
+# Node/JS artifacts
+assets/node_modules/
+assets/.next/
+assets/.cache/
+assets/package-lock.json
+assets/yarn.lock
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Elixir test artifacts
+cover/
+test/tmp/
+
+# VS Code
+.vscode/
+
+# Logs
+/log/
+*.log
