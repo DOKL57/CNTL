@@ -7,7 +7,7 @@ defmodule CntlWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_cntl_key",
-    signing_salt: "orlF1Mru",
+    signing_salt: System.get_env("SESSION_SIGNING_SALT") || "orlF1Mru",
     same_site: "Lax"
   ]
 

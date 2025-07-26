@@ -23,7 +23,7 @@ config :cntl, CntlWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "+LoVmbvZLQcyVFhiRUvcrRjvlH3KbFv8hCo/SUKtTuVKx8f42r2hZxfD18ofVh/0",
+  secret_key_base: System.get_env("SECRET_KEY_BASE") || Mix.Utils.mix_shell().cmd("mix phx.gen.secret") |> String.trim(),
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:cntl, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:cntl, ~w(--watch)]}
