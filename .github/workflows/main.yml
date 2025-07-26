@@ -11,13 +11,15 @@ jobs:
       - name: Set up Elixir
         uses: erlef/setup-beam@v1
         with:
-          elixir-version: '1.17.2' 
+          elixir-version: '1.17.2'
           otp-version: '26'
 
       - name: Install dependencies
         run: mix deps.get
+        working-directory: CNTL/cntl
 
       - name: Run Credo with Reviewdog
         run: |
           mix credo --format=flycheck \
             | reviewdog -f=flycheck -name="Credo" -reporter=github-pr-review
+        working-directory: CNTL/cntl
